@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
   :root {
     --main: #DDD6FE;
-    --bgmain:#BBC4EF;
+    --darkmain: #BBC4EF;
     --white: #FFFFFF;
     --black: #000000;
     --bggray: #FAFAF9;
@@ -48,18 +48,6 @@ const GlobalStyle = createGlobalStyle`
   a:link, a:visited { 
     color: var(--black);
     text-decoration: none;
-  }
-  
-  @media screen and (max-width: 375px) {
-    html {
-      /* font-size: 55%; */
-    }
-  }
-  
-  @media screen and (max-width: 335px) {
-    html {
-      /* font-size: 45%; */
-    }
   }
 `;
 

@@ -23,7 +23,7 @@ const Chat = () => {
   const { room } = useSelector(state => state);
   const { user } = useSelector(state => state);
   const [messages, setMessages] = useState([]);
-  const messageEndRef = useRef();
+  // const messageEndRef = useRef();
 
   useEffect(() => {
     if (!room.currentRoom) return;
@@ -37,8 +37,7 @@ const Chat = () => {
     }
 
     getMessages();
-    // 메시지가 쌓이면 안되니까 unmount되었을땐 메시지를 비우도록
-    // console.log("check", messages);
+
     return () => {
       setMessages([]);
     };
@@ -75,9 +74,9 @@ const Chat = () => {
                 user={user}
               />
             ))}
-            <div ref={messageEndRef}></div>
+            {/* <div ref={messageEndRef}></div> */}
           </List>
-          {/* <Divider /> */}
+          <Divider />
           <ChatInput />
         </Grid>
       </Grid>

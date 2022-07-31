@@ -20,7 +20,6 @@ const Main = styled.main`
   position: relative;
   background-color: white;
   width: 100%;
-
   height: calc(100vh - 50px);
   max-width: 28rem;
   margin-top: 1.5rem;

@@ -44,38 +44,13 @@ const Home = () => {
   }
   return (
     <>
-      {/* <Box sx={{ display: "flex", backgroundColor: "red" }}> */}
-      {/* <Typography>
-          <Link href='/login'>Go to the login page</Link>
-        </Typography> */}
-      {/* <Box sx={{ display: "flex", backgroundColor: "white" }}> */}
       <Header />
-      {/* <Drawer variant='permanent' sx={{ width: 300 }} className='no-scroll'> */}
-      {/* <Toolbar /> */}
-      {/* <Box sx={{ display: "flex", minHeight: "calc( 100vh - 64px )" }}> */}
+
       <RoomMenu />
-      {/* </Box> */}
-      {/* </Drawer> */}
-      {/* <Box component='main' sx={{ flexGrow: 1, p: 3 }}> */}
+
       <Chat />
-      {/* </Box>
-        </Box>
-      </Box> */}
     </>
   );
 };
 
 export default Home;
-
-// <Box sx={{ display: "flex", backgroundColor: "white" }}>
-// <Header />
-// <Drawer variant='permanent' sx={{ width: 300 }} className='no-scroll'>
-//   <Toolbar />
-//   <Box sx={{ display: "flex", minHeight: "calc( 100vh - 64px )" }}>
-//     <RoomMenu />
-//   </Box>
-// </Drawer>
-// <Box component='main' sx={{ flexGrow: 1, p: 3 }}>
-//   <Chat />
-// </Box>
-// </Box>

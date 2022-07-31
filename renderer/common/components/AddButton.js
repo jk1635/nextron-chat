@@ -51,7 +51,7 @@ const AddButton = () => {
     <>
       <ListItem
         secondaryAction={
-          <IconButton onClick={handleClickOpen}>
+          <IconButton sx={{ mr: -2, mt: 0.3 }} onClick={handleClickOpen}>
             <AddIcon />
           </IconButton>
         }

@@ -32,7 +32,6 @@ const Header = () => {
   };
   const handleLogout = async () => {
     await signOut(getAuth());
-    console.log("axdf");
   };
 
   return (
@@ -61,7 +60,6 @@ const Header = () => {
               sx={{
                 fontSize: "1.15rem",
                 mt: 0.8,
-
                 fontWeight: 700,
               }}
             >
@@ -70,7 +68,20 @@ const Header = () => {
           </Box>
 
           <Box>
-            <AddButton />
+            <IconButton onClick={handleOpen}>
+              <Avatar alt='profileImage' src={user.currentUser?.photoURL} />
+            </IconButton>
+            <Menu
+              sx={{ ml: "-4px" }}
+              anchorEl={anchorEl}
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+              anchorOrigin={{ vertical: "bottom", horizontal: "bottom" }}
+            >
+              <MenuItem onClick={handleLogout}>
+                <Typography textAlign='center'>Logout</Typography>
+              </MenuItem>
+            </Menu>
           </Box>
         </Toolbar>
       </AppBar>

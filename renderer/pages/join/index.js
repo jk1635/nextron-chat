@@ -4,7 +4,6 @@ import Router from "next/router";
 import Link from "next/link";
 
 import {
-  Avatar,
   Box,
   Container,
   Typography,
@@ -48,10 +47,7 @@ const Join = () => {
     const email = data.get("email");
     const password = data.get("password");
     const confirmPassword = data.get("confirmPassword");
-    // if (!name || !email || !password || !confirmPassword) {
-    //   setError("모든 항목을 입력해주세요.");
-    //   return;
-    // }
+
     if (!name) {
       setError("이름을 입력해주세요.");
       return;
@@ -107,7 +103,7 @@ const Join = () => {
   }, [error]);
 
   return (
-    <Container component='main' maxWidth='xs'>
+    <Container maxWidth='xs'>
       <Box
         sx={{
           display: "flex",
@@ -117,7 +113,14 @@ const Join = () => {
           mt: "8rem",
         }}
       >
-        <Typography component='h1' variant='h4'>
+        <Typography
+          component='h1'
+          variant='h5'
+          sx={{
+            letterSpacing: ".05rem",
+            fontWeight: "bold",
+          }}
+        >
           회원가입
         </Typography>
         <Box component='form' noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
@@ -172,19 +175,20 @@ const Join = () => {
             fullWidth
             variant='contained'
             color='primary'
-            sx={{ mt: 3, mb: 2 }}
+            sx={{
+              mt: 3,
+              mb: 2,
+              color: "var(--white)",
+              letterSpacing: ".05rem",
+              fontWeight: "bold",
+            }}
             loading={loading}
           >
             회원가입
           </LoadingButton>
           <Grid container justifyContent='flex-end'>
-            <Grid item>
-              <Link
-                href='/login'
-                style={{ textDecoration: "none", color: "blue" }}
-              >
-                이미 계정이 있나요? 로그인으로 이동
-              </Link>
+            <Grid item sx={{ fontSize: "0.8rem" }}>
+              <Link href='/login'>이미 계정이 있나요? 로그인으로 이동</Link>
             </Grid>
           </Grid>
         </Box>

@@ -5,6 +5,7 @@ import "../firebase";
 import { getDatabase, onChildAdded, ref } from "firebase/database";
 import { useDispatch } from "react-redux";
 import { loadRoom } from "../redux/modules/room";
+import AddButton from "./AddButton";
 
 const RoomMenu = () => {
   const dispatch = useDispatch();
@@ -53,13 +54,14 @@ const RoomMenu = () => {
     <>
       <Box
         sx={{
-          padding: "20px",
+          display: "flex",
+          justifyContent: "space-between",
+          padding: "20px 24px 20px 24px",
         }}
       >
         <List
           sx={{
             display: "flex",
-            justifyContent: "flex-start",
           }}
         >
           {rooms.map(room => (
@@ -77,7 +79,7 @@ const RoomMenu = () => {
                 height: "2.5rem",
                 mr: 1.5,
                 color: "var(--bggray)",
-                backgroundColor: "var(--bgmain)",
+                backgroundColor: "var(--darkmain)",
               }}
             >
               <ListItemText
@@ -86,12 +88,13 @@ const RoomMenu = () => {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  color: "var(--white)",
+                  color: "var(--black)",
                 }}
               />
             </ListItem>
           ))}
         </List>
+        <AddButton />
       </Box>
     </>
   );

@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
+
 import dotenv from "dotenv";
 dotenv.config();
 // TODO: Add SDKs for Firebase products that you want to use
@@ -20,5 +20,5 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 // Initialize Realtime Database and get a reference to the service

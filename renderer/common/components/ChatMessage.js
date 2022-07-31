@@ -30,7 +30,7 @@ const ChatMessage = ({ message, user }) => {
             primaryTypographyProps={{
               fontWeight: "bold",
               color:
-                message.user.id === user.currentUser.uid ? "orange" : "black",
+                message.user.id === user.currentUser?.uid ? "orange" : "black",
             }}
             // 메시지가 언제 입력됐는지
             secondary={dayjs(message.timestamp).fromNow()}
