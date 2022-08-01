@@ -1,26 +1,24 @@
 import React, { useState } from "react";
 
+// redux
+import { useSelector } from "react-redux";
+
+// firebase
+import "../firebase";
+import { signOut, getAuth } from "firebase/auth";
+
+// lib
 import {
   AppBar,
   Avatar,
   Box,
   IconButton,
-  List,
-  ListItem,
-  ListItemText,
   Menu,
   MenuItem,
   Toolbar,
   Typography,
 } from "@mui/material";
-import TagIcon from "@mui/icons-material/Tag";
 
-import { useSelector } from "react-redux";
-import "../firebase";
-import { signOut, getAuth } from "firebase/auth";
-import MenuIcon from "@mui/icons-material/Menu";
-import RoomMenu from "./RoomMenu";
-import AddButton from "./AddButton";
 const Header = () => {
   const { user } = useSelector(state => state);
   const [anchorEl, setAnchorEl] = useState(null);

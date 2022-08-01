@@ -1,6 +1,9 @@
 import React, { useCallback, useState } from "react";
-import { Grid, IconButton, InputAdornment, TextField } from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
+
+// redux
+import { useSelector } from "react-redux";
+
+// firebase
 import "../firebase";
 import {
   getDatabase,
@@ -9,7 +12,10 @@ import {
   serverTimestamp,
   set,
 } from "firebase/database";
-import { useDispatch, useSelector } from "react-redux";
+
+// lib
+import { Grid, IconButton, InputAdornment, TextField } from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
 
 const ChatInput = () => {
   const { room } = useSelector(state => state);

@@ -1,5 +1,7 @@
-import { CardContent, Grid, Paper, Typography } from "@mui/material";
 import React from "react";
+
+// lib
+import { CardContent, Grid, Typography } from "@mui/material";
 
 const ChatHeader = ({ roomInfo }) => {
   return (

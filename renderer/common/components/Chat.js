@@ -1,21 +1,17 @@
-import { Divider, Grid, List, Paper, Toolbar } from "@mui/material";
-import React, { useState, useEffect, useRef, useCallback } from "react";
-import ChatHeader from "./ChatHeader";
+import React, { useState, useEffect } from "react";
+
+// redux
 import { useDispatch, useSelector } from "react-redux";
+import { Divider, Grid, List } from "@mui/material";
+
+// firebase
+import "../firebase";
+import { child, get, getDatabase, ref } from "firebase/database";
+
+// components
+import ChatHeader from "./ChatHeader";
 import ChatInput from "./ChatInput";
 import ChatMessage from "./ChatMessage";
-import "../firebase";
-import {
-  child,
-  get,
-  getDatabase,
-  onChildAdded,
-  orderByChild,
-  query,
-  ref,
-  startAt,
-} from "firebase/database";
-import { loadRoom } from "../redux/modules/room";
 
 const Chat = () => {
   const dispatch = useDispatch();
@@ -23,7 +19,6 @@ const Chat = () => {
   const { room } = useSelector(state => state);
   const { user } = useSelector(state => state);
   const [messages, setMessages] = useState([]);
-  // const messageEndRef = useRef();
 
   useEffect(() => {
     if (!room.currentRoom) return;
@@ -35,9 +30,7 @@ const Chat = () => {
       );
       setMessages(snapShot.val() ? Object.values(snapShot.val()) : []);
     }
-
     getMessages();
-
     return () => {
       setMessages([]);
     };
@@ -49,12 +42,10 @@ const Chat = () => {
       <Grid sx={{}}>
         <Grid
           container
-          // component={Paper}
           variant='outlined'
           sx={{
             display: "flex",
             alignItems: "space-between",
-            // justifyContent: "space-between",
             flexDirection: "column",
           }}
         >
@@ -74,7 +65,6 @@ const Chat = () => {
                 user={user}
               />
             ))}
-            {/* <div ref={messageEndRef}></div> */}
           </List>
           <Divider />
           <ChatInput />

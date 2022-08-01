@@ -1,20 +1,21 @@
-import { Typography } from "@mui/material";
 import React, { useEffect } from "react";
-import { Box, Drawer, Toolbar } from "@mui/material";
-// import Header from "../../common/components/Header";
-// import RoomMenu from "../../common/components/RoomMenu";
-// import Chat from "../../common/components/Chat";
 import Router from "next/router";
 
+// redux
 import { useDispatch, useSelector } from "react-redux";
 import { clearUser, setUser } from "../../common/redux/modules/user";
+
+// firebase
 import "../../common/firebase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { CircularProgress, Stack } from "@mui/material";
-import Link from "next/link";
+
+// components
 import Header from "../../common/components/Header";
 import RoomMenu from "../../common/components/RoomMenu";
 import Chat from "../../common/components/Chat";
+
+// lib
+import { CircularProgress, Stack } from "@mui/material";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -45,9 +46,7 @@ const Home = () => {
   return (
     <>
       <Header />
-
       <RoomMenu />
-
       <Chat />
     </>
   );

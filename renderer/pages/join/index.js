@@ -1,8 +1,21 @@
 import React, { useState, useEffect } from "react";
 import Router from "next/router";
-
 import Link from "next/link";
 
+// redux
+import { useDispatch } from "react-redux";
+import { setUser } from "../../common/redux/modules/user";
+
+// firebase
+import "../../common/firebase";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+import { getDatabase, ref, set } from "firebase/database";
+
+// lib
 import {
   Box,
   Container,
@@ -13,17 +26,6 @@ import {
 } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 import md5 from "md5";
-
-import "../../common/firebase";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  updateProfile,
-} from "firebase/auth";
-import { getDatabase, ref, set } from "firebase/database";
-
-import { useDispatch } from "react-redux";
-import { setUser } from "../../common/redux/modules/user";
 
 const PasswordValid = (password, confirmPassword) => {
   if (password.length < 6 || confirmPassword < 6) {

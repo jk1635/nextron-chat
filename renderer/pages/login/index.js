@@ -1,4 +1,12 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import Router from "next/router";
+
+// firebase
+import "../../common/firebase";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
+// lib
 import {
   Avatar,
   Box,
@@ -8,12 +16,7 @@ import {
   TextField,
   Alert,
 } from "@mui/material";
-import TagIcon from "@mui/icons-material/Tag";
 import { LoadingButton } from "@mui/lab";
-import Link from "next/link";
-import "../../common/firebase";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import Router from "next/router";
 
 const Login = () => {
   const [error, setError] = useState("");
