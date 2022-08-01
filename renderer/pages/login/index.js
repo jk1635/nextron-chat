@@ -55,7 +55,7 @@ const Login = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: "100vh",
+          mt: "8rem",
         }}
       >
         <Typography

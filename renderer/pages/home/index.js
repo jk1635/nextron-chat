@@ -22,7 +22,7 @@ const Home = () => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(getAuth(), user => {
-      if (!!user) {
+      if (user !== null) {
         // 유저 로그인
         dispatch(setUser(user));
       } else {

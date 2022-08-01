@@ -65,7 +65,6 @@ const Join = () => {
       return;
     }
     postUserData(name, email, password);
-    Router.push("/home");
   };
 
   const postUserData = async (name, email, password) => {
@@ -87,6 +86,7 @@ const Join = () => {
       });
       // name과 avatar 프로필 업데이트를 한 후 반영을 하기 위해 setUSer를 작성
       dispatch(setUser(user));
+      Router.push("/home");
       // store에 user 저장
     } catch (e) {
       setError(e.message);

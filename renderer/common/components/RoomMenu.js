@@ -88,7 +88,7 @@ const RoomMenu = () => {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  color: "var(--black)",
+                  color: "var(--white)",
                 }}
               />
             </ListItem>
