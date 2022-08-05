@@ -1,9 +1,12 @@
+// @ts-check
+
 import React, { useEffect } from "react";
 import Router from "next/router";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
 import { clearUser, setUser } from "../../common/redux/modules/user";
+import type { RootState } from "../../common/redux/configureStore";
 
 // firebase
 import "../../common/firebase";
@@ -19,7 +22,9 @@ import { CircularProgress, Stack } from "@mui/material";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { isLoading, currentUser } = useSelector(state => state.user);
+  const { isLoading, currentUser } = useSelector(
+    (state: RootState) => state.user
+  );
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(getAuth(), user => {

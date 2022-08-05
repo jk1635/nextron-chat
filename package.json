@@ -15,7 +15,8 @@
     "babel-preset-next": "^1.4.0",
     "dotenv": "^16.0.1",
     "electron-serve": "^1.1.0",
-    "electron-store": "^8.0.1"
+    "electron-store": "^8.0.1",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@emotion/react": "^11.9.3",
@@ -24,6 +25,12 @@
     "@mui/icons-material": "^5.8.4",
     "@mui/lab": "^5.0.0-alpha.91",
     "@mui/material": "^5.9.1",
+    "@types/md5": "^2.3.2",
+    "@types/node": "^16.11.7",
+    "@types/react": "^18.0.8",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-redux": "^7.1.24",
+    "@types/styled-components": "^5.1.25",
     "dayjs": "^1.11.4",
     "electron": "^18.2.0",
     "electron-builder": "^23.0.3",
@@ -36,7 +43,6 @@
     "react-redux": "^8.0.2",
     "redux": "4.1.0",
     "redux-devtools-extension": "^2.13.9",
-    "styled-components": "^5.3.5"
-  },
-  "license": "MIT"
+    "typescript": "^4.6.4"
+  }
 }
