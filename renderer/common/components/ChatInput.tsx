@@ -18,8 +18,8 @@ import { Grid, IconButton, InputAdornment, TextField } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 
 const ChatInput = () => {
-  const { room } = useSelector(state => state);
-  const { user } = useSelector(state => state);
+  const { room }: any = useSelector(state => state);
+  const { user }: any = useSelector(state => state);
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const handleChange = e => {

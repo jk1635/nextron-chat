@@ -10,7 +10,6 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 // lib
 import {
-  Avatar,
   Box,
   Container,
   Typography,

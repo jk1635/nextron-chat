@@ -3,9 +3,9 @@ import React from "react";
 // lib
 import { CardContent, Grid, Typography } from "@mui/material";
 
-const ChatHeader = ({ roomInfo }) => {
+const ChatHeader = ({ roomInfo }: { roomInfo: any }) => {
   return (
-    <Grid container variant='outlined'>
+    <Grid>
       <CardContent sx={{ p: "16px 16px 16px 24px" }}>
         <Typography variant='h6' sx={{ fontSize: "1rem", fontWeight: "bold" }}>
           {roomInfo?.name}

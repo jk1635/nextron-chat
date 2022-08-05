@@ -3,7 +3,11 @@ import styled from "styled-components";
 
 // TODO :  mui로 바꾸기
 
-const Template = ({ children }) => {
+type Props = {
+  children: JSX.Element;
+};
+
+const Template = ({ children }: Props) => {
   return (
     <MainBox>
       <Main>{children}</Main>

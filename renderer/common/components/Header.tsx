@@ -20,10 +20,10 @@ import {
 } from "@mui/material";
 
 const Header = () => {
-  const { user } = useSelector(state => state);
+  const { user }: any = useSelector(state => state);
   const [anchorEl, setAnchorEl] = useState(null);
-  const handleOpen = event => {
-    setAnchorEl(event.currentTarget);
+  const handleOpen = (e: any) => {
+    setAnchorEl(e.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
