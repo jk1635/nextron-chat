@@ -1,3 +1,5 @@
+// @ts-check
+
 import React, { useState, useEffect } from "react";
 import Router from "next/router";
 import Link from "next/link";
@@ -27,7 +29,7 @@ import {
 import { LoadingButton } from "@mui/lab";
 import md5 from "md5";
 
-const PasswordValid = (password, confirmPassword) => {
+const PasswordValid = (password: any, confirmPassword: any) => {
   if (password.length < 6 || confirmPassword < 6) {
     return false;
   } else if (password !== confirmPassword) {
@@ -42,7 +44,7 @@ const Join = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = e => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const name = data.get("name");
@@ -69,7 +71,7 @@ const Join = () => {
     postUserData(name, email, password);
   };
 
-  const postUserData = async (name, email, password) => {
+  const postUserData = async (name: any, email: any, password: any) => {
     setLoading(true);
     try {
       // 로그인 한 상태로 바뀐다.
@@ -90,8 +92,8 @@ const Join = () => {
       dispatch(setUser(user));
       Router.push("/home");
       // store에 user 저장
-    } catch (e) {
-      setError(e.message);
+    } catch (error: any) {
+      setError(error);
       setLoading(false);
     }
   };

@@ -39,7 +39,9 @@ const AddButton = () => {
       name: roomName,
       details: roomDetail,
     };
+
     const updates = {};
+
     updates["/rooms/" + key] = newRoom;
 
     try {
@@ -75,7 +77,7 @@ const AddButton = () => {
             type='text'
             fullWidth
             variant='standard'
-            onChange={e => setRoomName(e.target.value)}
+            onChange={(e: any) => setRoomName(e.target.value)}
           />
           <TextField
             autoComplete='off'
@@ -84,7 +86,7 @@ const AddButton = () => {
             type='text'
             fullWidth
             variant='standard'
-            onChange={e => setRoomDetail(e.target.value)}
+            onChange={(e: any) => setRoomDetail(e.target.value)}
           />
         </DialogContent>
         <DialogActions>

@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.json",
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+, "common/components/AddButton.js"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

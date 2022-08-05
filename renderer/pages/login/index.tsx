@@ -1,3 +1,5 @@
+// @ts-check
+
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Router from "next/router";
@@ -8,7 +10,6 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 // lib
 import {
-  Avatar,
   Box,
   Container,
   Typography,
@@ -21,7 +22,7 @@ import { LoadingButton } from "@mui/lab";
 const Login = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const handleSubmit = e => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const email = data.get("email");
@@ -33,12 +34,12 @@ const Login = () => {
     loginUser(email, password);
   };
 
-  const loginUser = async (email, password) => {
+  const loginUser = async (email: any, password: any) => {
     setLoading(true);
     try {
       await signInWithEmailAndPassword(getAuth(), email, password);
-    } catch (e) {
-      setError(e.message);
+    } catch (error: any) {
+      setError(error);
       setLoading(false);
     }
     Router.push("/home");

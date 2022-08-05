@@ -8,12 +8,18 @@ import {
   ListItemAvatar,
   ListItemText,
 } from "@mui/material";
-import dayjs from "dayjs";
 
-const relativeTime = require("dayjs/plugin/relativeTime");
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+
 dayjs.extend(relativeTime);
 
-const ChatMessage = ({ message, user }) => {
+interface ChatInfo {
+  user: any;
+  message: any;
+}
+
+const ChatMessage = ({ message, user }: ChatInfo) => {
   return (
     <ListItem>
       <ListItemAvatar sx={{ alignSelf: "stretch" }}>

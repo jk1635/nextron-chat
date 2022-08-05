@@ -16,8 +16,8 @@ import ChatMessage from "./ChatMessage";
 const Chat = () => {
   const dispatch = useDispatch();
 
-  const { room } = useSelector(state => state);
-  const { user } = useSelector(state => state);
+  const { room }: any = useSelector<any>(state => state);
+  const { user }: any = useSelector<any>(state => state);
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
@@ -39,36 +39,22 @@ const Chat = () => {
   return (
     <>
       <ChatHeader roomInfo={room.currentRoom} />
-      <Grid sx={{}}>
-        <Grid
-          container
-          variant='outlined'
+      <Grid container>
+        <List
           sx={{
-            display: "flex",
-            alignItems: "space-between",
-            flexDirection: "column",
+            height: "calc(100vh - 425px)",
+            overflow: "hidden",
+            overflowY: "scroll",
+            maxHeight: "100vh",
+            width: "100%",
           }}
         >
-          <List
-            sx={{
-              height: "calc(100vh - 425px)",
-              overflow: "hidden",
-              overflowY: "scroll",
-              maxHeight: "100vh",
-              width: "100%",
-            }}
-          >
-            {messages.map(message => (
-              <ChatMessage
-                key={message.timestamp}
-                message={message}
-                user={user}
-              />
-            ))}
-          </List>
-          <Divider />
-          <ChatInput />
-        </Grid>
+          {messages.map(message => (
+            <ChatMessage key={message} message={message} user={user} />
+          ))}
+        </List>
+        <Divider />
+        <ChatInput />
       </Grid>
     </>
   );

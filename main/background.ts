@@ -2,7 +2,7 @@ import { app } from 'electron';
 import serve from 'electron-serve';
 import { createWindow } from './helpers';
 
-const isProd = process.env.NODE_ENV === 'production';
+const isProd: boolean = process.env.NODE_ENV === 'production';
 
 if (isProd) {
   serve({ directory: 'app' });
@@ -23,7 +23,7 @@ if (isProd) {
   } else {
     const port = process.argv[2];
     await mainWindow.loadURL(`http://localhost:${port}/home`);
-    // mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
   }
 })();
 

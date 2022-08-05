@@ -39,7 +39,7 @@ const RoomMenu = () => {
   // };
 
   const changeRoom = useCallback(
-    room => {
+    (room: any) => {
       if (room.id === activeRoomId) return;
       setActiveRoomId(room.id);
       dispatch(loadRoom(room));

@@ -1,18 +1,11 @@
 {
   "presets": ["next/babel"],
-  "plugins": [["styled-components", { "ssr": true }]],
-  "env": {
-    "test": {
-      "presets": [
-        [
-          "next/babel",
-          {
-            "preset-env": {
-              "modules": "commonjs"
-            }
-          }
-        ]
-      ]
-    }
-  }
+  "plugins": [
+    [
+      "styled-components",
+      {
+        "ssr": true
+      }
+    ]
+  ]
 }

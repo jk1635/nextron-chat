@@ -19,6 +19,7 @@ export default function (props) {
       secondary: { main: "#E7E5E4" },
     },
   });
+
   return (
     <ThemeProvider theme={theme}>
       <Provider store={store}>
