@@ -9,14 +9,14 @@
 
 ## 1\. 프로젝트 소개
 
-![nextron-chat](https://github.com/greencoffee1635/nextron-chat/blob/main/docs/resource/result.gif)
+![nextron-chat](https://github.com/jk1635/nextron-chat/blob/main/docs/resource/result.gif)
 
 ## 2\. 프로젝트 실행 방법
 
 - .env.example을 참고하여 .env 파일 생성
 
 ```bash
-> git clone https://github.com/greencoffee1635/nextron-chat.git
+> git clone https://github.com/jk1635/nextron-chat.git
 > cd nextron-chat
 > yarn install
 > yarn dev
